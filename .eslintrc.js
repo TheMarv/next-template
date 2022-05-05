@@ -4,7 +4,8 @@ module.exports = {
     "es2021": true
   },
   "extends": [
-    "next/core-web-vitals"
+    "react-app",
+    "react-app/jest"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
