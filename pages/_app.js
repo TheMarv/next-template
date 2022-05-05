@@ -1,7 +1,26 @@
-import '../styles/globals.css'
+import { GlobalStyleComponent } from 'styled-components';
+
+const GlobalStyles = GlobalStyleComponent`
+  *,
+  *::before
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
