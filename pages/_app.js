@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -14,11 +14,17 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const theme = {
+  color: '#000',
+};
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
